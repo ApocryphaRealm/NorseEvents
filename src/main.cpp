@@ -101,8 +101,9 @@ namespace
             subs = g_subs;
         }
         if (g_logEvents)
-            NRN_INFO("EVENT %s: subject %s, other %s, asset %s, %d -> %d%s%s", e.name, Short(e.subject).c_str(), Short(e.other).c_str(),
-                     Short(e.asset).c_str(), e.oldValue, e.newValue, (e.flags & NE_CRIT) ? ", crit" : "", (e.flags & NE_EXECUTED) ? ", executed" : "");
+            NRN_INFO("EVENT %s: subject %s, other %s, asset %s, %d -> %d%s%s%s%s", e.name, Short(e.subject).c_str(), Short(e.other).c_str(),
+                     Short(e.asset).c_str(), e.oldValue, e.newValue, (e.flags & NE_CRIT) ? ", crit" : "", (e.flags & NE_EXECUTED) ? ", executed" : "",
+                     NE_Text(&e) ? ", text " : "", NE_Text(&e) ? NE_Text(&e) : "");
         for (const Sub& s : subs)
             if (s.name == "*" || s.name == e.name)
             {

@@ -16,6 +16,7 @@
 
 #include <Windows.h>
 
+#include <cstddef>
 #include <cstdint>
 #include <filesystem>
 
@@ -37,7 +38,14 @@ extern "C"
         int32_t oldValue;
         int32_t newValue;
         uint32_t flags;
+        const char* text; // 0.1.0 later (NorsePayload): a payload's name, or null. Read only when size covers it:
+                          // size >= offsetof(NE_Event, text) + sizeof(const char*) - see NE_Text()
     };
+
+    inline const char* NE_Text(const NE_Event* e)
+    {
+        return (e && e->size >= offsetof(NE_Event, text) + sizeof(const char*)) ? e->text : nullptr;
+    }
 
     typedef void (*NE_Callback)(const NE_Event* e, void* ctx);
     typedef int (*NE_SubscribeFn)(const char* name, NE_Callback cb, void* ctx); // returns an id > 0, or 0
