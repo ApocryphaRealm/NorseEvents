@@ -40,3 +40,7 @@ Log: `NorseEvents.log` beside `NorseEvents.ini` (or `sLogDir`), one line per eve
 The Norse Address Library 1.0.x with table IDs 2-6 (`ue4ss\NorseAddressLibrary\`). Without it every hook stays off and
 the log says so. Build: `xmake f -p windows -a x64 -m release --toolchain=msvc -y`, then `xmake` (needs `../NorsePatcher`
 and `../NorseAddressLibrary` beside it; MinHook is in `third_party/`).
+
+## Licence
+
+GPL-3.0-or-later (see LICENSE). MinHook (BSD 2-Clause), compiled into the DLL, keeps its own notice in THIRD-PARTY-NOTICES.txt.
