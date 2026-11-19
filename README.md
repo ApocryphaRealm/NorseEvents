@@ -4,7 +4,7 @@ The shared event channel of the Norse frameworks - a UE4SS v4.0.0 C++ mod for NO
 moment once and tells every subscriber, so the overhaul's modules (block/stamina/poise, followers, attributes, hit
 effects) and later frameworks (Conditions, Payload, HUD, Impact) listen instead of each hooking the same game function.
 
-First of the further frameworks in `4. plans\norse-realtime-combat-20261116\ASSESSMENT-AND-PLAN.md` (survey:
+First of the further frameworks in the Norse overhaul plan (survey:
 `RESEARCH-more-frameworks.md`). Modelled on powerofthree's Papyrus Extender events and on UE4SS's own advice that many
 separate hooks on one function slow the game.
 
